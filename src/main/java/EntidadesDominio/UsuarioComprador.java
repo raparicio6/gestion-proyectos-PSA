@@ -1,23 +1,25 @@
 package EntidadesDominio;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Usuario {
+public class UsuarioComprador {
 	
 	private String nombre;
 	private String apellido;
 	private String mail;
 	private String telefono;
-	private List<RolUsuario> roles;
+	private List<RolUsuarioComprador> roles;
 	
-	public Usuario(String nombre, String apellido, String mail, String telefono){
+	public UsuarioComprador(String nombre, String apellido, String mail, String telefono){
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.mail = mail;
 		this.telefono = telefono;
+		this.roles = new ArrayList<RolUsuarioComprador>();
 	}
 	
-	public void agregarRol(RolUsuario rol){
+	public void agregarRol(RolUsuarioComprador rol){
 		this.roles.add(rol);
 	}
 	
@@ -35,6 +37,10 @@ public class Usuario {
 	
 	public String getTelefono(){
 		return this.telefono;
+	}
+	
+	public List<RolUsuarioComprador> getRoles(){
+		return this.roles;
 	}
 
 }

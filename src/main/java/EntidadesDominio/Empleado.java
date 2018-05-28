@@ -1,6 +1,6 @@
 package EntidadesDominio;
 
-public class Empleado implements RolUsuario{
+public class Empleado implements RolUsuarioEmpresaVendedora{
 
 	private String legajo;
 	private Cargo cargo;
