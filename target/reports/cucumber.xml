@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="2" time="0.083591">
+<testcase classname="Debito de fondos" name="Caja de ahorro con saldo suficiente" time="0.083253">
+<system-out><![CDATA[Dado que mi caja de ahorro tiene un saldo de "100" pesos....................passed
+Cuando cuando debito "50" pesos.............................................passed
+Entonces el saldo final es de "50" pesos....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Debito de fondos" name="Caja de ahorro sin saldo suficiente" time="0.000338">
+<system-out><![CDATA[Dado que mi caja de ahorro tiene un saldo de "10" pesos.....................passed
+Cuando cuando debito "20" pesos.............................................passed
+Entonces la operacion es rechazada y el saldo final es "10" pesos...........passed
+]]></system-out>
+</testcase>
+</testsuite>
