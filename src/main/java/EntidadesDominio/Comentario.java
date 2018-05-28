@@ -3,14 +3,14 @@ package EntidadesDominio;
 public class Comentario {
 	
 	private String descripcion;
-	private UsuarioComprador autor;	
+	private UsuarioEmpresaVendedora autor;	
 	
-	public Comentario(String descripcion, UsuarioComprador autor){
+	public Comentario(String descripcion, UsuarioEmpresaVendedora autor){
 		this.descripcion = descripcion;
 		this.autor = autor;		
 	}
 	
-	public UsuarioComprador getAutor(){
+	public UsuarioEmpresaVendedora getAutor(){
     	return this.autor;
     }
 	
