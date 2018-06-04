@@ -17,7 +17,7 @@ public class Proyecto {
     private Dinero presupuesto;
     private int horasAsignadas;
     private EstadoProyecto estado;
-    
+    private Dinero dineroFacturado;    
 
     public Proyecto(String identificacion, Date fechaInicio, Date fechaEstimadaFin, Cliente cliente, 
     		Dinero presupuesto, int horasAsignadas, EstadoProyecto estadoInicial) {
@@ -32,6 +32,7 @@ public class Proyecto {
         this.presupuesto = presupuesto;
         this.horasAsignadas = horasAsignadas;
         this.estado = estadoInicial;
+        this.dineroFacturado = null;
     }    
 	
     public String getIdentificacion() {
@@ -96,6 +97,14 @@ public class Proyecto {
     
     public void modificarEstado(EstadoProyecto nuevoEstado){
     	this.estado = nuevoEstado;
+    }
+    
+    public Dinero getDineroFacturado() {
+        return this.dineroFacturado;
+    }
+    
+    public void setDineroFacturado(Dinero dinero) {
+        this.dineroFacturado = dinero;
     }
     
 

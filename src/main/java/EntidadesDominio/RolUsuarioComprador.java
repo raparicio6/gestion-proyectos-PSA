@@ -11,5 +11,6 @@ public interface RolUsuarioComprador {
 	
 	public void agregarTicket(TicketSoporte ticket);
 	public List<TicketSoporte> getTicketsGenerados();
+	public void darFeedbackResolucionTicket(String feedback, long idTicket);
 	
 }

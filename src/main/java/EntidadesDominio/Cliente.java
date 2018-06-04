@@ -56,5 +56,18 @@ public class Cliente implements RolUsuarioComprador {
 	public List<TicketSoporte> getTicketsGenerados(){
 		return this.tickets;
 	}	
+	
+	public void darFeedbackResolucionTicket(String feedback, long idTicket){
+		TicketSoporte t = null;		
+		
+		for (TicketSoporte ticket : this.getTicketsGenerados()){			
+			if (ticket.getId() == idTicket){				
+				t = ticket;
+				break;
+			}				
+		}		
+		
+		t.darFeedbackResolucion(feedback);			
+	}
 
 }
