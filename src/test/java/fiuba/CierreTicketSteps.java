@@ -22,7 +22,7 @@ public class CierreTicketSteps {
     public void que_un_ticket_es_creado_por_un_cliente_como_descripcion(String descripcion) throws Throwable {
     	this.cliente = new Cliente(descripcion,"Sony","Avenida Belgrano 2040");    	
     	this.ticket = new TicketSoporte(cliente, descripcion, 1);       
-    	this.cliente.agregarTicket(ticket);
+    	this.cliente.crearTicket(ticket);
     }
 
     @Cuando("^se resuelve$")

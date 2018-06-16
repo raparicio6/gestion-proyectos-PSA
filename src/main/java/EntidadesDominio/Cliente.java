@@ -45,7 +45,7 @@ public class Cliente implements RolUsuarioComprador {
 		this.productos.add(producto);
 	}
 	
-	public void agregarTicket(TicketSoporte ticket){
+	public void crearTicket(TicketSoporte ticket){
 		this.tickets.add(ticket);
 	}
 	

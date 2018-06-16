@@ -35,8 +35,7 @@ public class DesarrolloTareaFinalizadoSteps {
     public void se_le_asigna_a_un_desarrollador(String legajo) throws Throwable {
     	this.desarrollador = new Empleado(legajo, Cargo.DESARROLLADOR, Area.OPERACIONES);
     	this.desarrollador.tomarTarea(this.tarea);		
-    	this.tarea.asignarEmpleado(this.desarrollador);		
-    	this.tarea.modificarEstado(EstadoTarea.EN_CURSO);   	
+    	this.tarea.asignarEmpleado(this.desarrollador);    	   	
     }
 
     @Entonces("^el desarrollador la resuelve y finaliza la tarea numero \"(.*?)\"$")

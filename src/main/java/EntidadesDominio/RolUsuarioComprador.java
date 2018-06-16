@@ -9,7 +9,7 @@ public interface RolUsuarioComprador {
 	public void agregarProducto(Producto producto);
 	public List<Producto> getProductosContratados();
 	
-	public void agregarTicket(TicketSoporte ticket);
+	public void crearTicket(TicketSoporte ticket);
 	public List<TicketSoporte> getTicketsGenerados();
 	public void darFeedbackResolucionTicket(String feedback, long idTicket);
 	
