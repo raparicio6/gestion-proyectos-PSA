@@ -42,7 +42,7 @@ public class Tarea {
 		if (this.empleadoAlQueSeAsigno != null)
 			throw new TareaYaAsignadaException();
 			
-		this.empleadoAlQueSeAsigno = empleado;
+		this.empleadoAlQueSeAsigno = empleado;		 	
 	}
 	
 	public long getNumeroTarea(){

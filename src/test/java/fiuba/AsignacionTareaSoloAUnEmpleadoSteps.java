@@ -29,7 +29,7 @@ public class AsignacionTareaSoloAUnEmpleadoSteps {
 	private Requisito requisito = new Requisito("NOMBRE", "DESCRIPCION");
 	private Tarea tarea;
 	private Empleado desarrollador;	
-	private List<RuntimeException> exceptions = new ArrayList<>();
+	private List<RuntimeException> exceptions = new ArrayList<RuntimeException>();
 	
 	@Dado("^que una tarea con \"(.*?)\" de descripcion se crea$")
     public void que_una_tarea_con_de_descripcion_se_crea(String descripcion) throws Throwable {
@@ -40,9 +40,8 @@ public class AsignacionTareaSoloAUnEmpleadoSteps {
     @Cuando("^se le asigna a desarrollador de legajo \"(.*?)\"$")
     public void se_le_asigna_a_desarrollador(String legajo) throws Throwable {
     	this.desarrollador = new Empleado(legajo, Cargo.DESARROLLADOR, Area.OPERACIONES);
-    	this.desarrollador.agregarTarea(this.tarea);		
-    	this.tarea.asignarEmpleado(this.desarrollador);		
-    	this.tarea.modificarEstado(EstadoTarea.EN_CURSO);   	
+    	this.desarrollador.tomarTarea(this.tarea);		
+    	this.tarea.asignarEmpleado(this.desarrollador);    	
     }
 
     @Entonces("^si se intenta asignar la tarea a otro desarrollador no se lo permite$")
@@ -50,12 +49,18 @@ public class AsignacionTareaSoloAUnEmpleadoSteps {
     	Empleado desarrollador2 = new Empleado("12343333", Cargo.DESARROLLADOR, Area.OPERACIONES);
     	
     	try {
-            tarea.asignarEmpleado(desarrollador2);
+            this.tarea.asignarEmpleado(desarrollador2);
         } catch (TareaYaAsignadaException e) {
             this.exceptions.add(e);
         }
     	
-    	assertNotEquals(this.exceptions.size(), 0);    	
+    	try {
+            desarrollador2.tomarTarea(this.tarea);
+        } catch (TareaYaAsignadaException e) {
+            this.exceptions.add(e);
+        }    	
+    	
+    	assertEquals(this.exceptions.size(), 2);    	
     }
 
 }

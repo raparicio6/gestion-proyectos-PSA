@@ -43,8 +43,12 @@ public class Empleado implements RolUsuarioEmpresaVendedora{
 		return this.tareas;
 	}
 	
-	public void agregarTarea(Tarea tarea){
+	public void tomarTarea(Tarea tarea){
+		if (tarea.getEmpleadoAlQueSeAsigno() != null)
+			throw new TareaYaAsignadaException();		
+		
 		this.tareas.add(tarea);
+		tarea.modificarEstado(EstadoTarea.EN_CURSO);  
 	}
 	
 	public void finalizarTarea(long numeroTarea){
